@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Todo - CanJS with jQuery / RequireJS written in CoffeeScript</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/todo.css">
+	
+	<script data-main="js/main" src="js/libs/require.js"></script>
+	<!-- 
+	For using an optimized one JavaScript file point "data-main" to "js/main-optimized" as follow 
+	<script data-main="js/main-optimized" src="js/libs/require.js"></script>
+	-->
+
+
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<section id="todoapp">
+		<header id="header">
+			<h1>todos</h1>
+			<input id="new-todo" placeholder="What needs to be done?" autofocus>
+		</header>
+	</section>
+
+	<footer id="info">
+		<p>Double-click to edit a todo</p>
+		<p><a href="http://canjs.us/">CanJS</a> example created by <a href="http://bitovi.com/">Bitovi</a>.<br/> Refactored by <a href="http://websector.de/">Jens Krause</a> for using <a href="http://canjs.us/">CanJS</a> and <a href="http://requirejs.org/">RequireJS</a> <br/>Part of <a href="http://todomvc.com">TodoMVC</a>.</p>
+	</footer>
+</body>
+</html>

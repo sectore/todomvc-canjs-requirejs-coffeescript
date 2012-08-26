@@ -1,0 +1,12 @@
+syntax: glob
+
+# os specific files
+._*
+.DS_Store
+
+# SublimeText project files
+*.sublime-project
+*.sublime-workspace
+
+# node modules
+build/node_modules/
