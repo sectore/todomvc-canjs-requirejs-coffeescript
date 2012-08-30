@@ -1,7 +1,7 @@
 
 
 
-define("models/Todo", ['can'], function(can) {
+define('models/Todo',['can'], function(can) {
   var Todo;
   return Todo = can.Model({
     localStore: function(cb) {
@@ -82,7 +82,7 @@ define("models/Todo", ['can'], function(can) {
 
 
 
-define("models/TodoList", ['can', 'models/Todo'], function(can, Todo) {
+define('models/TodoList',['can', 'models/Todo'], function(can, Todo) {
   return Todo.List = can.Model.List({
     completed: function() {
       var counter;
@@ -104,7 +104,7 @@ define("models/TodoList", ['can', 'models/Todo'], function(can, Todo) {
 
 
 
-define("controllers/Todos", ['can', 'models/Todo'], function(can, Todo) {
+define('controllers/Todos',['can', 'models/Todo'], function(can, Todo) {
   var Todos;
   return Todos = can.Control({
     init: function() {
@@ -179,21 +179,16 @@ define("controllers/Todos", ['can', 'models/Todo'], function(can, Todo) {
 
 
 require.config({
-  shim: {
-    'can': {
-      exports: 'can'
-    }
-  },
   paths: {
-    jquery: 'libs/jquery-1.8.0.min',
-    can: 'libs/can.jquery-1.0.7',
-    json: 'libs/json2'
-  }
+    jquery: ['http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min', 'libs/jquery-1.8.0.min'],
+    json: ['http://cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2', 'libs/json2'],
+    can: ['http://canjs.us/release/1.0.7/can.jquery', 'libs/can.jquery-1.0.7']
+  },
+  waitSeconds: 15
 });
 
-require(['jquery', 'models/Todo', 'models/TodoList', 'controllers/Todos'], function($, Todo, TodoList, Todos) {
+require(['jquery', 'json', 'can', 'models/Todo', 'models/TodoList', 'controllers/Todos'], function($, can, json, Todo, TodoList, Todos) {
   return $(function() {
-    console.log('jQuery version: ' + $().jquery);
     return Todo.findAll({}, function(todos) {
       return new Todos('#todoapp', {
         todos: todos

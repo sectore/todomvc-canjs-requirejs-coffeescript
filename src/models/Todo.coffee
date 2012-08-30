@@ -1,5 +1,5 @@
 'use strict'
-define "models/Todo", ['can'], (can) ->
+define ['can'], (can) ->
   Todo = can.Model
 
     localStore: (cb)->

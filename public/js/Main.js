@@ -1,21 +1,16 @@
 'use strict';
 
 require.config({
-  shim: {
-    'can': {
-      exports: 'can'
-    }
-  },
   paths: {
-    jquery: 'libs/jquery-1.8.0.min',
-    can: 'libs/can.jquery-1.0.7',
-    json: 'libs/json2'
-  }
+    jquery: ['http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min', 'libs/jquery-1.8.0.min'],
+    json: ['http://cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2', 'libs/json2'],
+    can: ['http://canjs.us/release/1.0.7/can.jquery', 'libs/can.jquery-1.0.7']
+  },
+  waitSeconds: 15
 });
 
-require(['jquery', 'models/Todo', 'models/TodoList', 'controllers/Todos'], function($, Todo, TodoList, Todos) {
+require(['jquery', 'json', 'can', 'models/Todo', 'models/TodoList', 'controllers/Todos'], function($, can, json, Todo, TodoList, Todos) {
   return $(function() {
-    console.log('jQuery version: ' + $().jquery);
     return Todo.findAll({}, function(todos) {
       return new Todos('#todoapp', {
         todos: todos

@@ -1,5 +1,5 @@
 'use strict'
-define "models/TodoList", ['can', 'models/Todo'], (can, Todo) ->
+define ['can', 'models/Todo'], (can, Todo) ->
   Todo.List = can.Model.List
 
     completed: ->

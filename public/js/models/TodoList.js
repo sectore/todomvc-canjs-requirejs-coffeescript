@@ -1,6 +1,6 @@
 'use strict';
 
-define("models/TodoList", ['can', 'models/Todo'], function(can, Todo) {
+define(['can', 'models/Todo'], function(can, Todo) {
   return Todo.List = can.Model.List({
     completed: function() {
       var counter;

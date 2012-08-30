@@ -1,6 +1,6 @@
 'use strict';
 
-define("models/Todo", ['can'], function(can) {
+define(['can'], function(can) {
   var Todo;
   return Todo = can.Model({
     localStore: function(cb) {

@@ -1,6 +1,6 @@
 'use strict';
 
-define("controllers/Todos", ['can', 'models/Todo'], function(can, Todo) {
+define(['can', 'models/Todo'], function(can, Todo) {
   var Todos;
   return Todos = can.Control({
     init: function() {

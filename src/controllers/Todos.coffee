@@ -1,5 +1,5 @@
 'use strict'
-define "controllers/Todos", ['can', 'models/Todo'], (can, Todo) ->
+define ['can', 'models/Todo'], (can, Todo) ->
 
   Todos = can.Control
 
@@ -28,7 +28,7 @@ define "controllers/Todos", ['can', 'models/Todo'], (can, Todo) ->
           el.val ""
 
     # Handle a newly created Todo
-    # '{Todo} created': (list, ev, item) ->
+    # "{Todo} created": (list, ev, item) ->
     #   @options.todos.push item
     
     # Listen for editing a Todo
@@ -70,6 +70,3 @@ define "controllers/Todos", ['can', 'models/Todo'], (can, Todo) ->
       for i in [@options.todos.length - 1..0] by -1
         todo = @options.todos[i]
         todo.destroy() if todo.attr('complete')
-
-
-
